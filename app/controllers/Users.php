@@ -97,9 +97,75 @@ class Users extends Controller{
 
       //Login the user..........................................................................................................................
       public function login(){
-            $data = [];
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                  //Form is submitting
+                  $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            $this->view('users/v_login', $data);
+                  //Input data
+                  $data = [
+                        'email' => trim($_POST['email']),
+                        'password' => trim($_POST['password']),
+
+                        'email_err' => '',
+                        'password_err' => ''
+                  ];
+
+                  //Validate each input
+                  //Validate email
+                  if(empty($data['email'])){
+                        $data['email_err'] = 'Please enter an email';
+                  }
+                  else{
+                        //Check if email is already registered or not
+                        if($this->userModel->findUserByEmail($data['email'])){
+                              //User is found
+                        }
+                        else{
+                              //User is not found
+                              $data['email_err'] = 'User is not found';
+                        }
+                  }
+
+                  //Validate password
+                  if(empty($data['password'])){
+                        $data['password_err'] = 'Please enter the password';
+                  }
+
+                  //If no errors then login the user
+                  if(empty($data['email_err']) && empty($data['password_err'])){
+                        // Log the user
+                        $loggedUser = $this->userModel->login($data['email'], $data['password']);
+
+                        if($loggedUser){
+                              //User the authenticated
+                              //Create the session
+                              die('Access granted');
+                        }
+                        else{
+                              $data['password_err'] = 'Password is incorrect';
+                              
+                              //Load view
+                              $this->view('users/v_login', $data);
+                        }
+                  }
+                  else{
+                        //Load view with errors
+                        $this->view('users/v_login', $data);
+                  }
+            }
+            else{
+                  //Initial Form
+                  $data = [
+                        'email' => '',
+                        'password' => '',
+
+                        'email_err' => '',
+                        'password_err' => ''
+                  ];
+
+                  //Load view
+                  $this->view('users/v_login', $data);
+            }
       }
 }
 ?>
