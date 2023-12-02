@@ -1,0 +1,21 @@
+/* CSS Libraty */
+
+/* Components */
+@import url('components/topnavbar.css');
+@import url('components/form_style.css');
+@import url('components/buttons_style.css');
+
+
+/* Font */
+
+@font-face {
+      font-family: poppins-Regular;
+      src: url(font/Poppins-Regular.ttf);
+}
+
+body{
+      margin: 0;
+      font-family: poppins-Regular;
+      font-size: small;
+      text-align: left;
+}
