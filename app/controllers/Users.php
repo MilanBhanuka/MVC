@@ -65,7 +65,7 @@ class Users extends Controller{
 
                         //Register the user
                         if($this->userModel->register($data)){
-                              die('User is registered');
+                              redirect('Users/login');
                         }
                         else{
                               die('Something went wrong');
@@ -139,7 +139,7 @@ class Users extends Controller{
                         if($loggedUser){
                               //User the authenticated
                               //Create the session
-                              die('Access granted');
+                              redirect('Pages/index');
                         }
                         else{
                               $data['password_err'] = 'Password is incorrect';

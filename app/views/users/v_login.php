@@ -14,6 +14,7 @@
       <!-- TOP NAVIGATION -->
       <?php require APPROOT . '/views/inc/components/topnavbar.php'; ?>
 
+      <!-- LOGIN FORM -->
       <div class="form-container">
             <div class="form-header">
                   <h1>User Login</h1>
