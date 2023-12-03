@@ -1,7 +1,13 @@
 <?php
-      class Posts{
-            public function __construct(){
-                  echo 'This is the posts controller';
-            }
+class Posts extends Controller{
+      public function __construct(){
+           
       }
+
+      public function create(){
+            $data =[];
+
+            $this->view('posts/v_create', $data);
+      }
+}
 ?>

@@ -34,9 +34,10 @@
 
                   <!-- submit -->
                   <br>
-                  <input type="submit" value="Login" class="form-btn">
-                  
+                  <input type="submit" value="Login" class="form-btn">     
             </form>
+
+            <?php flash('reg_flash');?>
       </div>
 
 

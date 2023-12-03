@@ -14,7 +14,7 @@
       <!-- TOP NAVIGATION -->
       <?php require APPROOT . '/views/inc/components/topnavbar.php'; ?>
 
-      <h1>Welcome</h1>
+      <h1>Welcome <?php echo $_SESSION['user_name'];?></h1>
 
 </body>
 </html>
