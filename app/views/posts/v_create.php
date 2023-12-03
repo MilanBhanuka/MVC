@@ -20,9 +20,12 @@
       <div class="post-header">
                   <h1>Create a post</h1>
             </div>
-            <form action="">
-                  <input type="text" name="title" id="title" placeholder="Title">
-                  <textarea type="text" name="body" id="body" placeholder="Content" rows="10" cols="70"></textarea>
+            <form action="<?php echo URLROOT;?>/Posts/create" method="POST">
+                  <input type="text" name="title" id="title" placeholder="Title" value="<?php $data['title'];?>">
+                  <span class="form-invalid"><?php echo $data['title_err'] ?></span>
+
+                  <textarea type="text" name="body" id="body" placeholder="Content" rows="10" value="<?php $data['body'];?>"></textarea>
+                  <span class="form-invalid"><?php echo $data['body_err'] ?></span>
 
                   <br>
                   <input type="submit" value="Post" class="post-btn">  
