@@ -4,10 +4,14 @@
 @import url('components/topnavbar.css');
 @import url('components/form_style.css');
 @import url('components/buttons_style.css');
+@import url('components/flash_message_style.css');
+
+
+/* Posts */
+@import url('posts/post_style.css');
 
 
 /* Font */
-
 @font-face {
       font-family: poppins-Regular;
       src: url(font/Poppins-Regular.ttf);
