@@ -7,7 +7,12 @@ class Posts extends Controller{
       }
 
       public function index(){
-            $data =[];
+            $posts = $this->postModel->getPosts();
+            
+            $data = [
+                  'posts' => $posts
+            ];
+
             $this->view('posts/v_index', $data);
       }
 
