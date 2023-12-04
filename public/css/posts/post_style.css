@@ -1,3 +1,73 @@
+/* INDEX */
+.post-index-container{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      /* padding: 15px; */
+      background-color: rgb(216, 255, 200);
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      width: 500px;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+}
+
+.post-index-container .post-header{
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      border-bottom: 1px solid #d3d3d3;
+      border-radius: 5px 5px 0 0;
+}
+
+.post-index-container .post-header .post-username{
+      padding-right: 15px;
+      font-weight: 600;
+      color: rgb(19,18,18);
+}
+
+.post-index-container .post-header .post-created-at{
+      font-size: 12px;
+      color: rgb(116,116,116);
+}
+
+.post-index-container .post-body{
+      padding: 10px;
+      border-bottom: 1px solid #d3d3d3;
+}
+
+.post-index-container .post-body .post-title{
+      font-size: 20px;
+      font-weight: 600;
+      color: rgb(19,18,18)
+}
+
+.post-index-container .post-body .post-content{
+      /* font-size: 14px; */
+      color: rgb(19,18,18);
+}
+
+.post-index-container .post-footer{
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 13px;
+}
+
+.post-index-container .post-footer .post-like{
+      color: rgb(33, 167, 16);
+      font-weight: 600;
+
+}
+.post-index-container .post-footer .post-dislike{
+      color: rgb(167, 16, 16);
+      font-weight: 600;
+}
+
+
+
+/* CREATE */
 .post-container{
       margin-left: auto;
       margin-right: auto;
