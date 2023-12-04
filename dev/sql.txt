@@ -30,4 +30,4 @@ CREATE VIEW v_posts AS
       Users.create_at as user_created_at
       FROM Posts INNER JOIN Users
       ON Posts.user_id = Users.id
-      ORDER BY Posts.create_at;
+      ORDER BY Posts.create_at DESC;

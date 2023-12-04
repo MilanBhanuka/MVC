@@ -14,14 +14,23 @@
       <!-- TOP NAVIGATION -->
       <?php require APPROOT . '/views/inc/components/topnavbar.php'; ?>
 
+
       <h1>Post</h1>
 
-      <?php foreach($data['posts'] as $post):  ?>
+      <?php flash('post_msg'); ?>
 
+
+      <?php foreach($data['posts'] as $post):  ?>
       <div class="post-index-container">
             <div class="post-header">
                   <div class="post-username"><?php echo $post->user_name; ?></div>
                   <div class="post-created-at"><?php echo $post->post_created_at; ?></div>
+
+                  <?php if($post->user_id == $_SESSION['user_id']): ?>
+                        <div class="post-control-btns">
+                              <a href="<?php echo URLROOT?>/Posts/edit/<?php echo $post->post_id ?>"><button class="post-control-btn1">EDIT</button></a>
+                        </div>
+                  <?php endif; ?>
             </div>
             <div class="post-body">
                   <div class="post-title"><?php echo $post->title; ?></div>
