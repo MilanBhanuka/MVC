@@ -14,21 +14,21 @@
       <!-- TOP NAVIGATION -->
       <?php require APPROOT . '/views/inc/components/topnavbar.php'; ?>
 
-      <h1>Posts Create</h1>
+      <h1>Posts Edit</h1>
 
       <div class="post-container">
       <div class="post-header">
-                  <h1>Create a post</h1>
+                  <h1>Edit the post</h1>
             </div>
-            <form action="<?php echo URLROOT;?>/Posts/create" method="POST">
-                  <input type="text" name="title" id="title" placeholder="Title" value="<?php $data['title'];?>">
+            <form action="<?php echo URLROOT;?>/Posts/edit/<?php echo $data['post_id']?>" method="POST">
+                  <input type="text" name="title" id="title" placeholder="Title" value="<?php echo $data['title'];?>">
                   <span class="form-invalid"><?php echo $data['title_err'] ?></span>
 
-                  <textarea type="text" name="body" id="body" placeholder="Content" rows="10" value="<?php $data['body'];?>"></textarea>
+                  <textarea type="text" name="body" id="body" placeholder="Content" rows="10"><?php echo $data['body'];?></textarea>
                   <span class="form-invalid"><?php echo $data['body_err'] ?></span>
 
                   <br>
-                  <input type="submit" value="Post" class="post-btn">  
+                  <input type="submit" value="Update" class="post-btn">  
             </form>
       </div>
 
