@@ -16,20 +16,24 @@
 
       <h1>Post</h1>
 
+      <?php foreach($data['posts'] as $post):  ?>
+
       <div class="post-index-container">
             <div class="post-header">
-                  <div class="post-username">Milan Bhanuka</div>
-                  <div class="post-created-at">04.12.2023</div>
+                  <div class="post-username"><?php echo $post->user_name; ?></div>
+                  <div class="post-created-at"><?php echo $post->post_created_at; ?></div>
             </div>
             <div class="post-body">
-                  <div class="post-title">Title</div>
-                  <div class="post-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo id facere suscipit ducimus rem minima, dolorem ipsum natus adipisci aspernatur in, ad magni esse. Ratione velit delectus provident sed ea!</div>
+                  <div class="post-title"><?php echo $post->title; ?></div>
+                  <div class="post-content"><?php echo $post->body; ?></div>
             </div>
             <div class="post-footer">
                   <div class="post-like">Likes 0</div>
                   <div class="post-dislike">Dislike 0</div>
             </div>
       </div>
+      <?php endforeach; ?>
+
 
 </body>
 </html>
