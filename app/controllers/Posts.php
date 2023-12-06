@@ -6,8 +6,9 @@ class Posts extends Controller{
            $this->postsModel = $this->model('M_Posts');
       }
 
-
-      // Default method..................................................
+      //Main Post Functionality.....................................................
+      
+      // View method..................................................
       public function index(){
             $posts = $this->postsModel->getPosts();
 
@@ -109,6 +110,7 @@ class Posts extends Controller{
                   }
             }
             else{
+                  // Get existing post from model
                   $post = $this->postsModel->getPostById($postId);
 
                   // Check for owner
@@ -125,10 +127,31 @@ class Posts extends Controller{
                         'body_err' => ''
                   ];
                  
+                  // Load view
                  $this->view('posts/v_edit', $data);
             }
       }
 
 
+      // Delete method..................................................
+      public function delete($postId){
+            // Get existing post from model
+            $post = $this->postsModel->getPostById($postId);
+
+            // Check the owner
+            if($post->user_id != $_SESSION['user_id']){
+                  redirect('Posts/index');
+            }
+            else{
+                  // Make sure no errors
+                  if($this->postsModel->delete($postId)){
+                        flash('post_msg', 'Post is deleted');
+                        redirect('Posts/index');
+                  }
+                  else{
+                        die('Something went wrong');
+                  }
+            }
+      }
 }
 ?>

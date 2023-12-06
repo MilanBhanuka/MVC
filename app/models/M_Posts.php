@@ -65,5 +65,23 @@ class M_Posts{
 
             }
       }
+
+
+      // Delete post................................................
+      public function delete($postId){
+            $this->db->query('DELETE FROM Posts WHERE id = :id');
+            // Bind values
+            $this->db->bind(':id', $postId);
+            
+
+            // Execute
+            if($this->db->execute()){
+                  return true;
+            }
+            else{
+                  return false;
+
+            }
+      }
 }
 ?>

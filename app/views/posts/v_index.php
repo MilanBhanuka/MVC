@@ -19,6 +19,9 @@
 
       <?php flash('post_msg'); ?>
 
+      <a href="<?php echo URLROOT?>/Posts/create/"><button class="post-create-btn">CREATE POST</button></a>
+
+
 
       <?php foreach($data['posts'] as $post):  ?>
       <div class="post-index-container">
@@ -29,13 +32,19 @@
                   <?php if($post->user_id == $_SESSION['user_id']): ?>
                         <div class="post-control-btns">
                               <a href="<?php echo URLROOT?>/Posts/edit/<?php echo $post->post_id ?>"><button class="post-control-btn1">EDIT</button></a>
+                              <a href="<?php echo URLROOT?>/Posts/delete/<?php echo $post->post_id ?>"><button class="post-control-btn2">DELETE</button></a>
+
                         </div>
                   <?php endif; ?>
+
+
             </div>
+
             <div class="post-body">
                   <div class="post-title"><?php echo $post->title; ?></div>
                   <div class="post-content"><?php echo $post->body; ?></div>
             </div>
+
             <div class="post-footer">
                   <div class="post-like">Likes 0</div>
                   <div class="post-dislike">Dislike 0</div>

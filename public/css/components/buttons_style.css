@@ -34,7 +34,7 @@
 
 
 
-
+/* edit button */
 .post-control-btn1{
       background-color: #4CAF50;
       color: white;
@@ -42,11 +42,49 @@
       margin-left:10px;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 50px;
       border-radius: 5px;
       transition: .2s all;
+      font-size: 10px;
 }
 
 .post-control-btn1:hover{
       background-color: rgb(28, 138, 30)
+}
+
+/* delete button */
+.post-control-btn2{
+      background-color: #af4c4c;
+      color: white;
+      padding: 5px 5px;
+      margin-left:10px;
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      border-radius: 5px;
+      transition: .2s all;
+      font-size: 10px;
+}
+
+.post-control-btn2:hover{
+      background-color: rgb(138, 28, 28)
+}
+
+/* create button */
+.post-create-btn{
+      background-color: #4c6faf;
+      color: white;
+      padding: 5px 5px;
+      margin-left:10px;
+      border: none;
+      cursor: pointer;
+      /* width: 50px; */
+      border-radius: 5px;
+      transition: .2s all;
+      font-size: 10px;
+
+}
+
+.post-create-btn:hover{
+      background-color: rgb(28, 79, 138)
 }
