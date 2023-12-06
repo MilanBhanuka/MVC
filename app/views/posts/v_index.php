@@ -27,7 +27,7 @@
       <div class="post-index-container">
             <div class="post-header">
                   <div class="post-username"><?php echo $post->user_name; ?></div>
-                  <div class="post-created-at"><?php echo $post->post_created_at; ?></div>
+                  <div class="post-created-at"><?php echo convertTimeToReadableFormat($post->post_created_at); ?></div>
 
                   <?php if($post->user_id == $_SESSION['user_id']): ?>
                         <div class="post-control-btns">

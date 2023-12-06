@@ -145,7 +145,10 @@ class Users extends Controller{
                               //Create the session
 
                               $this->createUserSession($loggedUser);
-                        }
+
+                              //Redirect to the Posts page
+                              redirect('Posts/index');
+                                                }
                         else{
                               $data['password_err'] = 'Password is incorrect';
                               
