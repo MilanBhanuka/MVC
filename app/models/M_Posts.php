@@ -49,11 +49,11 @@ class M_Posts{
 
       // Edit post................................................
       public function edit($data){
-            $this->db->query('UPDATE Posts set title = :title, body = :body WHERE id = :id');
+            $this->db->query('UPDATE posts set title = :title, body = :body WHERE id = :id');
             // Bind values
             $this->db->bind(':title', $data['title']);
             $this->db->bind(':body', $data['body']);
-            $this->db->bind(':id', $_SESSION['post_id']);
+            $this->db->bind(':id', $data['post_id']);
             
 
             // Execute

@@ -37,12 +37,15 @@
                               </div>
                         </div>
                   </div>
+                  
                   <div class="form-validation">
                         <div class="profile-image-validation">
                               <img src="<?php echo URLROOT; ?>/img/components/imageUpload/green-tick-icon.png" alt="green-tick" width="20px" height="20px">
                               Select a Profile Picture
                         </div>
                   </div>
+
+                  
                   
                   <!-- name -->
                   <div class="form-input-title">Name</div>
@@ -71,6 +74,8 @@
             </form>
       </div>
 
+<!-- javascript for profile image -->
+<script type="text/javascript" src="<?php echo URLROOT; ?>/js/components/imageUpload/imageUpload.js"></script>
 
 </body>
 </html>
